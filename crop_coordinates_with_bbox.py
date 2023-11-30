@@ -1,5 +1,5 @@
 from PIL import Image, ImageFilter, ImageChops, ImageDraw
-filename = "images/1701101741803.tiff"
+filename = "images/1701101199586.tiff"# "images/1701101741803.tiff"
 threshold_blue = 100
 threshold_red = 150
 
