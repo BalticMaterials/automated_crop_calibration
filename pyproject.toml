@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "automated-crop-calibration"
+version = "0.1.0"
+description = ""
+authors = ["Sven Nivera <sven1997@gmx.net>"]
+readme = "README.md"
+packages = [{include = "automated_crop_calibration"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.26.2"
+pillow = "^10.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
