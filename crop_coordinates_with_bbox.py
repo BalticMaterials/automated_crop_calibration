@@ -6,16 +6,18 @@ For other postures refer to "conveyor_belt_identification.py"!
 
 __author__ = "Sven Nivera"
 __contact__ = "sven.nivera@balticmaterials.de"
-__date__ = "2023/11/30"
+__date__ = "2023/12/14"
 __deprecated__ = False
 __license__ = "CC0 1.0 Universal"
 __maintainer__ = "Sven Nivera"
 __status__ = "Deployable"
-__version__ = "1.0.0"
-__annotations__ = "Software can be used as basis for further specialized calibrations!"
+__version__ = "1.0.1"
+__annotations__ = "Software can be used as basis for further specialized calibrations! Only manual access now"
 
 from PIL import Image, ImageFilter, ImageChops
-filename = "images/1701101199586.tiff"# "images/1701101741803.tiff"
+import time 
+filename = "images/1701101199586.tiff"
+session_name = "bbox_coordinates_" + str(time.time())
 threshold_blue = 100
 threshold_red = 150
 
@@ -52,6 +54,6 @@ with Image.open(filename) as img:
 
     # Cropping image and saving coordinates of crop area
     img.crop(img_threshold.getbbox()).show()
-    f = open("bbox_coordinates.txt", "w")
+    f = open(session_name + ".txt", "w")
     f.write(str(img_threshold.getbbox()))
     f.close()
